@@ -7,6 +7,9 @@ import org.springframework.security.oauth2.jwt.Jwt
 import org.springframework.stereotype.Service
 import javax.transaction.Transactional
 
+/**
+ * Registration of authenticated users.
+ */
 @Service
 @Transactional
 class SystemUserService internal constructor(
@@ -30,12 +33,13 @@ class SystemUserService internal constructor(
         // ToDo: Find by email
         var result = find(jwt.subject)
         if (result == null) {
-            val systemUser = SystemUser(jwt.subject, jwt.getClaim<String>("email"))
+            val systemUser = SystemUser(jwt.subject, jwt.getClaim("email"))
             result = save(systemUser)
         }
         return RegistrationResponse(result)
     }
 
-    val activeUser: SystemUser?
-        get() = find(tokenService.subject)
+    fun getActiveUser(): SystemUser? {
+        return find(tokenService.subject)
+    }
 }

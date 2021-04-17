@@ -131,7 +131,7 @@ class FigiApiTest {
         @BeforeAll
         @JvmStatic
         fun mockApis() {
-            val prefix = "/contracts/figi"
+            val prefix = "/mock/figi"
 
             mock(
                 ClassPathResource("$prefix/common-stock-response.json").file,

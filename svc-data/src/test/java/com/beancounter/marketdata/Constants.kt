@@ -9,6 +9,7 @@ import com.beancounter.common.utils.AssetUtils.Companion.getAsset
  */
 class Constants {
     companion object {
+        const val BLANK = ""
         const val usdValue = "USD"
         val USD = Currency(usdValue)
         val NASDAQ = Market("NASDAQ", USD, "US/Eastern")
@@ -20,9 +21,9 @@ class Constants {
         val SGD = Currency("SGD")
         val AUD = Currency("AUD")
         val ASX = Market("ASX", AUD)
-        val GBP = Currency("GBP")
+        val GBP = Currency(code = "GBP", symbol = "￡")
 
-        val EUR = Currency("EUR")
+        val EUR = Currency("EUR", symbol = "€")
 
         val NZD = Currency("NZD")
         val NZX = Market("NZX", NZD)

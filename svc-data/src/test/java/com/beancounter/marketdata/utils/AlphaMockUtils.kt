@@ -18,7 +18,7 @@ import java.util.HashMap
  * @since 2019-03-09
  */
 object AlphaMockUtils {
-    const val alphaContracts = "/contracts/alpha"
+    const val alphaContracts = "mock/alpha"
     private val objectMapper: ObjectMapper = BcJson().objectMapper
 
     @JvmStatic

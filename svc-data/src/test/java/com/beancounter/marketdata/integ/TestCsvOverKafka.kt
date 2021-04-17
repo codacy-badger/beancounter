@@ -161,7 +161,7 @@ class TestCsvOverKafka {
 
     @Autowired
     fun mockFx() {
-        val rateResponse = ClassPathResource("contracts/ecb/fx-current-rates.json").file
+        val rateResponse = ClassPathResource("mock/fx/fx-current-rates.json").file
 
         FxMvcTests.stubFx(
             "/v1/$tradeDateString?base=USD&symbols=AUD%2CEUR%2CGBP%2CNZD%2CSGD%2CUSD&access_key=test",

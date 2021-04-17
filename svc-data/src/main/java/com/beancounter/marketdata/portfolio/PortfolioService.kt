@@ -52,8 +52,7 @@ class PortfolioService internal constructor(
             if (systemUserService.isServiceAccount()) {
                 return m2mSystemUser
             }
-
-            val systemUser = systemUserService.activeUser
+            val systemUser = systemUserService.getActiveUser()
             verifyOwner(systemUser)
             return systemUser!!
         }
