@@ -67,6 +67,4 @@ class SystemUserService internal constructor(
             verifySystemUser(systemUser)
             return systemUser!!
         }
-
-
 }
